@@ -211,6 +211,7 @@ class ConnectycubeFlutterCallKitPlugin : FlutterPlugin, MethodCallHandler, Plugi
 
                 val launchIntent = getLaunchIntent(context!!)
                 launchIntent?.action = ACTION_CALL_ACCEPT
+                intent.putExtra(EXTRA_CALL_INITIATOR_ID, intent.getIntExtra(EXTRA_CALL_INITIATOR_ID, -1))
                 context.startActivity(launchIntent)
             }
         }
